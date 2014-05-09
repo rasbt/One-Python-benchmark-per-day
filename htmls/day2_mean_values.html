@@ -1741,7 +1741,7 @@ In&nbsp;[6]:
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1000000</span>
 <span class="n">samples</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-<span class="n">samples_array</span> <span class="o">=</span> <span class="n">np_arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">samples_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
 <span class="k">assert</span><span class="p">(</span><span class="n">st_mean</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span> <span class="o">==</span> <span class="n">np_mean</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
        <span class="o">==</span> <span class="n">calc_mean</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span> <span class="o">==</span> <span class="n">np_mean_ary</span><span class="p">(</span><span class="n">samples_array</span><span class="p">))</span>
