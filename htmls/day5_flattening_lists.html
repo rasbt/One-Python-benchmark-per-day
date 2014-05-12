@@ -3696,6 +3696,48 @@ AAAAAElFTkSuQmCC
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="conclusion">Conclusion</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The line plot above indicates that we have 2 different classes of list flattening methods: the first tier is taking linear time (blue shades), where the four other approaches (in shades of red) which have quadratic growth rates and therefore are significantly slower.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Of course, the <code>sum(list_2d, [])</code> has a very short syntax and might be just convenient to use it for list flattening, but the reason why it is so slow is that it will create a new &quot;intermediate&quot; list for every element (Note that all operations in that are shown in red shades in the plot above follow this same principle).<br />I would like to suggest to you the nice article <a href="http://mathieularose.com/how-not-to-flatten-a-list-of-lists-in-python/">&quot;How Not to Flatten a List of Lists in Python&quot;</a> by Mathieu Larose, who described this mechanism very nicely.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
