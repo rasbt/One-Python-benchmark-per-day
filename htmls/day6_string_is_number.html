@@ -1760,6 +1760,40 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'email'+'<\/'+'a'+'>');
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
+In&nbsp;[12]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[12]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+&apos;1.000000e+50&apos;
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
 In&nbsp;[1]:
 </div>
 <div class="inner_cell">
@@ -1821,6 +1855,15 @@ In&nbsp;[3]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><br> <br></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="testing-the-functions-for-correct-behavior">Testing the functions for correct behavior</h2>
 </div>
 </div>
@@ -1828,7 +1871,7 @@ In&nbsp;[3]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[4]:
+In&nbsp;[20]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1843,9 +1886,7 @@ In&nbsp;[4]:
           <span class="n">is_number_repl_isdigit</span>
           <span class="p">]</span>
 
-<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">[</span><span class="n">is_number_tryexcept</span><span class="p">,</span> 
-          <span class="n">is_number_regex</span><span class="p">,</span>
-          <span class="n">is_number_repl_isdigit</span><span class="p">]:</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
     <span class="k">assert</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a_float</span><span class="p">)</span> <span class="o">==</span> <span class="bp">True</span><span class="p">),</span> <span class="s">&#39;Error in </span><span class="si">%s</span><span class="s">(</span><span class="si">%s</span><span class="s">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">a_float</span><span class="p">)</span>
     <span class="k">assert</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">inv_float</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">),</span> <span class="s">&#39;Error in </span><span class="si">%s</span><span class="s">(</span><span class="si">%s</span><span class="s">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">inv_float</span><span class="p">)</span>
     <span class="k">assert</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">no_number</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">),</span> <span class="s">&#39;Error in </span><span class="si">%s</span><span class="s">(</span><span class="si">%s</span><span class="s">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">no_number</span><span class="p">)</span>
@@ -1873,6 +1914,127 @@ ok
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br> <br></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="special-cases-where-those-functions-do-not-work">Special cases where those functions do not work</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[28]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">a_float</span> <span class="o">=</span> <span class="s">&#39;.1234&#39;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Float notation &quot;.1234&quot; is not supported by:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">f</span><span class="p">(</span><span class="n">a_float</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\t</span><span class="s"> -&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Float notation &quot;.1234&quot; is not supported by:
+	 - is_number_regex
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="scientific-notations">Scientific notations</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[29]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">scientific1</span> <span class="o">=</span> <span class="s">&#39;1.000000e+50&#39;</span>
+<span class="n">scientific2</span> <span class="o">=</span> <span class="s">&#39;1e50&#39;</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Scientific notation &quot;1.000000e+50&quot; is not supported by:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">f</span><span class="p">(</span><span class="n">scientific1</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\t</span><span class="s"> -&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+        
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Scientific notation &quot;1e50&quot; is not supported by:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">f</span><span class="p">(</span><span class="n">scientific2</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\t</span><span class="s"> -&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Scientific notation &quot;1.000000e+50&quot; is not supported by:
+	 - is_number_regex
+	 - is_number_repl_isdigit
+Scientific notation &quot;1e50&quot; is not supported by:
+	 - is_number_regex
+	 - is_number_repl_isdigit
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br> <br></p>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2518,6 +2680,40 @@ QmCC
 <p><a name='results'></a></p>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="conclusion">Conclusion</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>try-except</code> approach appears to be slower than the replace-isdigit method for cases where the string is not a number - executing the <code>except-block</code> seems to be very costly. However, we have to consider that it also works for special cases like:<br />- '1.000000e+50'<br />- '1e50'<br />- '.12345'</p>
+<p>So it really depends on the data set which method to choose - the more thorough &quot;try-except&quot; or the faster &quot;replace-isdigit&quot;</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
