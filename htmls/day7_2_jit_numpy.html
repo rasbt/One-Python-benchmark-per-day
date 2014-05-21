@@ -1992,7 +1992,7 @@ In&nbsp;[39]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[40]:
+In&nbsp;[44]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2004,7 +2004,7 @@ In&nbsp;[40]:
                                          <span class="s">&#39;rel. performance gain&#39;</span><span class="p">])</span>
     <span class="n">fit_table</span><span class="o">.</span><span class="n">align</span><span class="p">[</span><span class="s">&#39;Numexpr function&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;l&#39;</span>
     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
-        <span class="n">fit_table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="s">&#39;{:.2%}x&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">fit_table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="s">&#39;{:.2f}x&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="p">(</span><span class="n">timings</span><span class="p">[</span><span class="s">&#39;numpy_complex_expr&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">timings</span><span class="p">[</span><span class="n">f</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]))])</span>
     <span class="k">print</span><span class="p">(</span><span class="n">fit_table</span><span class="p">)</span>
 </pre></div>
@@ -2017,7 +2017,7 @@ In&nbsp;[40]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[41]:
+In&nbsp;[45]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2032,7 +2032,7 @@ In&nbsp;[41]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[42]:
+In&nbsp;[46]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2080,7 +2080,7 @@ In&nbsp;[42]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[43]:
+In&nbsp;[47]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2120,10 +2120,10 @@ llvm version 0.12.4
 +---------+-----------------------+-----------------------+
 | n=10000 |        function       | rel. performance gain |
 +---------+-----------------------+-----------------------+
-|         |   numpy_complex_expr  |        100.00%x       |
-|         |  numexpr_complex_expr |        917.97%x       |
-|         |   numba_complex_expr  |        101.51%x       |
-|         | parakeet_complex_expr |       1167.62%x       |
+|         |   numpy_complex_expr  |         1.00x         |
+|         |  numexpr_complex_expr |         9.18x         |
+|         |   numba_complex_expr  |         1.02x         |
+|         | parakeet_complex_expr |         11.68x        |
 +---------+-----------------------+-----------------------+
 
 </pre>
@@ -2845,6 +2845,21 @@ rkJggg==
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
 </div>
 </div>
 
