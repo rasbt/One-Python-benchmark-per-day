@@ -1958,11 +1958,14 @@ In&nbsp;[7]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[8]:
+In&nbsp;[39]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">platform</span>
+<span class="kn">from</span> <span class="nn">llvm</span> <span class="kn">import</span> <span class="n">__version__</span> <span class="k">as</span> <span class="n">llvm__version__</span>
+<span class="kn">from</span> <span class="nn">parakeet</span> <span class="kn">import</span> <span class="n">__version__</span> <span class="k">as</span> <span class="n">parakeet__version__</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">__version__</span> <span class="k">as</span> <span class="n">numba__version__</span>
 
 <span class="k">def</span> <span class="nf">print_sysinfo</span><span class="p">():</span>
     <span class="k">print</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">system   :&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
@@ -1975,6 +1978,9 @@ In&nbsp;[8]:
     <span class="k">print</span> <span class="s">&#39;compiler&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">python_compiler</span><span class="p">()</span>
     <span class="k">print</span> <span class="s">&#39;NumPy version&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">__version__</span>
     <span class="k">print</span> <span class="s">&#39;Numexpr version&#39;</span><span class="p">,</span> <span class="n">ne</span><span class="o">.</span><span class="n">__version__</span>
+    <span class="k">print</span> <span class="s">&#39;parakeet version&#39;</span><span class="p">,</span> <span class="n">parakeet__version__</span>
+    <span class="k">print</span> <span class="s">&#39;Numba version&#39;</span><span class="p">,</span> <span class="n">numba__version__</span>
+    <span class="k">print</span> <span class="s">&#39;llvm version&#39;</span><span class="p">,</span> <span class="n">llvm__version__</span>
     <span class="k">print</span> <span class="s">&#39;</span><span class="se">\n\n</span><span class="s">&#39;</span>
 </pre></div>
 
@@ -1986,7 +1992,7 @@ In&nbsp;[8]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[32]:
+In&nbsp;[40]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1995,11 +2001,11 @@ In&nbsp;[32]:
 <span class="k">def</span> <span class="nf">summary_table</span><span class="p">(</span><span class="n">funcs</span><span class="p">):</span>
     <span class="n">fit_table</span> <span class="o">=</span> <span class="n">prettytable</span><span class="o">.</span><span class="n">PrettyTable</span><span class="p">([</span><span class="s">&#39;n=</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span><span class="k">orders_n</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> 
                                          <span class="s">&#39;function&#39;</span> <span class="p">,</span>
-                                         <span class="s">&#39;performance gain over NumPy&#39;</span><span class="p">])</span>
+                                         <span class="s">&#39;rel. performance gain&#39;</span><span class="p">])</span>
     <span class="n">fit_table</span><span class="o">.</span><span class="n">align</span><span class="p">[</span><span class="s">&#39;Numexpr function&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;l&#39;</span>
     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
-        <span class="n">fit_table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="s">&#39;{:.2%}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="p">(</span><span class="n">timings</span><span class="p">[</span><span class="s">&#39;numpy_complex_expr&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">timings</span><span class="p">[</span><span class="n">f</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">timings</span><span class="p">[</span><span class="s">&#39;numpy_complex_expr&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])])</span>
+        <span class="n">fit_table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="s">&#39;{:.2%}x&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">timings</span><span class="p">[</span><span class="s">&#39;numpy_complex_expr&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">timings</span><span class="p">[</span><span class="n">f</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]))])</span>
     <span class="k">print</span><span class="p">(</span><span class="n">fit_table</span><span class="p">)</span>
 </pre></div>
 
@@ -2011,7 +2017,7 @@ In&nbsp;[32]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[33]:
+In&nbsp;[41]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2026,7 +2032,7 @@ In&nbsp;[33]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[34]:
+In&nbsp;[42]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2074,7 +2080,7 @@ In&nbsp;[34]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[35]:
+In&nbsp;[43]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2105,17 +2111,20 @@ Python version 2.7.6
 compiler GCC 4.0.1 (Apple Inc. build 5493)
 NumPy version 1.8.1
 Numexpr version 2.4
+parakeet version 0.24
+Numba version 0.13.1
+llvm version 0.12.4
 
 
 
-+---------+-----------------------+-----------------------------+
-| n=10000 |        function       | performance gain over NumPy |
-+---------+-----------------------+-----------------------------+
-|         |   numpy_complex_expr  |            0.00%            |
-|         |  numexpr_complex_expr |            89.11%           |
-|         |   numba_complex_expr  |            1.49%            |
-|         | parakeet_complex_expr |            91.44%           |
-+---------+-----------------------+-----------------------------+
++---------+-----------------------+-----------------------+
+| n=10000 |        function       | rel. performance gain |
++---------+-----------------------+-----------------------+
+|         |   numpy_complex_expr  |        100.00%x       |
+|         |  numexpr_complex_expr |        917.97%x       |
+|         |   numba_complex_expr  |        101.51%x       |
+|         | parakeet_complex_expr |       1167.62%x       |
++---------+-----------------------+-----------------------+
 
 </pre>
 </div>
@@ -2836,36 +2845,6 @@ rkJggg==
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[14]:
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[]:
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre> 
-</pre></div>
-
-</div>
 </div>
 </div>
 
