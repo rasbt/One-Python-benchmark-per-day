@@ -3,6 +3,11 @@ One-Python-benchmark-per-day
 
 An ongoing project for benchmarking different Python approaches - ideally one per day!
 
+
+
+![logo](./images/logo.png)
+
+
 <br>
 <br>
 I would be happy to hear your comments and suggestions.  
