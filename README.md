@@ -1,5 +1,3 @@
-One-Python-benchmark-per-day
-============================
 
 An ongoing project for benchmarking different Python approaches - ideally one per day!
 
