@@ -1780,7 +1780,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'email'+'<\/'+'a'+'>');
 <li><p><code>math.sqrt(x)</code></p></li>
 <li><p><code>x**0.5</code></p></li>
 </ul>
-<p><strong>Note that we imported the math.sqrt() function into the global namespace to reduce the overhead:</strong></p>
+<p><strong>Note that we'll import the math.sqrt() and math.pow() functions into the global namespace to reduce the overhead:</strong></p>
 </div>
 </div>
 </div>
@@ -3094,21 +3094,132 @@ VBwQQgghxML/B5KZCiyPFB9DAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that although we have an <strong>additional name-lookup</strong> for the math-module<br />functions and the in-built <code>pow</code> function, those approaches are still faster<br />than using the in-built<code>**</code> operator.</p>
+<p><br> <br></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Despite the <strong>additional name-lookup</strong> for the <code>math</code>-module functions, those approaches are still faster than the in-built <code>**</code> operator and <code>pow</code> function.</p>
+<p><strong>Why is the <code>math</code> module more efficient?</strong><br />The <code>math</code> module uses the C implementations of the square root and power functions which explains the better performance. And <code>pow()</code> is really the same as the <code>**</code> operator but comes with an additional function call overhead.</p>
+<p>However, the math module comes with the disadvantage that it can't handle complex numbers. In those cases we'd need to use the <code>cmath</code> module.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[1]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre> 
+<div class="highlight"><pre><span class="p">(</span><span class="mi">81</span><span class="o">+</span><span class="mi">2j</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[1]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+(9.000685740426075+0.11110264582492375j)
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">cmath</span>
+<span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">81</span><span class="o">+</span><span class="mi">2j</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[3]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+(9.000685740426075+0.11110264582492377j)
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[4]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">81</span><span class="o">+</span><span class="mi">2j</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-4-0ed1cc6d12dd&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">      1</span> <span class="ansigreen">import</span> math<span class="ansiblue"></span>
+<span class="ansigreen">----&gt; 2</span><span class="ansired"> </span>math<span class="ansiblue">.</span>sqrt<span class="ansiblue">(</span><span class="ansicyan">81</span><span class="ansiblue">+</span><span class="ansicyan">2j</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+
+<span class="ansired">TypeError</span>: can&apos;t convert complex to float</pre>
+</div>
+</div>
+
 </div>
 </div>
 
