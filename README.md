@@ -37,4 +37,8 @@ Please feel free to drop me a note via
 
 - **Day 7** - Speeding up NumPy array expressions with Numexpr [[html](http://htmlpreview.github.io/?https://github.com/rasbt/One-Python-benchmark-per-day/blob/master/htmls/day7_numpy_numexpr.html)] [[IPython nbviewer](http://nbviewer.ipython.org/github/rasbt/One-Python-benchmark-per-day/blob/master/ipython_nbs/day7_numpy_numexpr.ipynb?create=1)] [[raw](https://github.com/rasbt/One-Python-benchmark-per-day/blob/master/ipython_nbs/day7_numpy_numexpr.ipynb)]
 
+
 - **Day 7.2** - Just-in-time compilers for NumPy array expressions [[html](http://htmlpreview.github.io/?https://github.com/rasbt/One-Python-benchmark-per-day/blob/master/htmls/day7_2_jit_numpy.html)] [[IPython nbviewer](http://nbviewer.ipython.org/github/rasbt/One-Python-benchmark-per-day/blob/master/ipython_nbs/day7_2_jit_numpy.ipynb?create=1)] [[raw](https://github.com/rasbt/One-Python-benchmark-per-day/blob/master/ipython_nbs/day7_2_jit_numpy.ipynb)]
+
+
+- **Day 8** - Calculating square roots and exponents [[html](http://htmlpreview.github.io/?https://github.com/rasbt/One-Python-benchmark-per-day/blob/master/htmls/day8_sqrt_and_exp.html)] [[IPython nbviewer](http://nbviewer.ipython.org/github/rasbt/One-Python-benchmark-per-day/blob/master/ipython_nbs/day8_sqrt_and_exp.ipynb?create=1)] [[raw](https://github.com/rasbt/One-Python-benchmark-per-day/blob/master/ipython_nbs/day8_sqrt_and_exp.ipynb)]
