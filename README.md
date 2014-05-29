@@ -42,3 +42,5 @@ Please feel free to drop me a note via
 
 
 - **Day 8** - Calculating square roots and exponents [[html](http://htmlpreview.github.io/?https://github.com/rasbt/One-Python-benchmark-per-day/blob/master/htmls/day8_sqrt_and_exp.html)] [[IPython nbviewer](http://nbviewer.ipython.org/github/rasbt/One-Python-benchmark-per-day/blob/master/ipython_nbs/day8_sqrt_and_exp.ipynb?create=1)] [[raw](https://github.com/rasbt/One-Python-benchmark-per-day/blob/master/ipython_nbs/day8_sqrt_and_exp.ipynb)]
+
+- **Day 9** - The most Pythonic way to check if a string ends with a particular substring [[html](http://htmlpreview.github.io/?https://github.com/rasbt/One-Python-benchmark-per-day/blob/master/htmls/day9_string_endswith.html)] [[IPython nbviewer](http://nbviewer.ipython.org/github/rasbt/One-Python-benchmark-per-day/blob/master/ipython_nbs/day9_string_endswith.ipynb?create=1)] [[raw](https://github.com/rasbt/One-Python-benchmark-per-day/blob/master/ipython_nbs/day9_string_endswith.ipynb)]
