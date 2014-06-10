@@ -1763,6 +1763,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <li><p><a href="#Visualization">Visualization</a></p></li>
 </ul></li>
 <li><h3><a href="#Results">Results</a></h3></li>
+<li><p><a href="#Conclusion">Conclusion</a></p></li>
 </ul>
 </div>
 </div>
@@ -4813,6 +4814,25 @@ AElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a name='performance1'></a> <br> <br></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="#Sections">[back to top]</a></p>
 </div>
 </div>
@@ -4822,7 +4842,8 @@ AElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a name='performance2'></a> <br> <br></p>
+<p>Of course it is not fair to compare the interpreted Python language to compiled C and Fortran code that have static types at compile time.<br />Here, I was mostly interested to see how the code compiled code via Cython stacks against Fortran via F2PY (of course different compiler version can also cause significant differences). And one can say that both are about equal in terms of performance (at least for this simple benchmark).</p>
+<p>It is nice to see that Cython and Fortran code can be used quite conveniently in IPython notebooks, which make them a even more valuable tool for data analyses and algorithm development: Code can be prototyped in Python, and step by step rewritten in context of the original documentation.<br />In the case of Cython, it is especially nice that Python and C functions can be mixed and matched to get the best out of both: Productivity and code efficiency.</p>
 </div>
 </div>
 </div>
