@@ -1828,7 +1828,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'email'+'<\/'+'a'+'>');
 <li><p><code>a.__add__(b)</code> Returns the sum of <code>a</code> and <code>b</code> in <code>a + b</code></p></li>
 <li><p><code>a.__iadd__(b)</code><br />Changes the value <code>a</code> in place, e.g., <code>a += b</code></p></li>
 </ul>
-<p>However, the <code>__iadd__</code> method supports only immutable types. Thus, if we use the in-place operator <code>+=</code> on, for example integers (integers are immutable), Python simulates the <code>__iadd__</code> method:<br />E.g., for<br /><code>a += b</code><br />via<br /><code>tmp = a + b; a = tmp</code></p>
+<p>However, the <code>__iadd__</code> method supports only mutable types. Thus, if we use the in-place operator <code>+=</code> on, for example, integers (integers are immutable), Python simulates the <code>__iadd__</code> method:</p>
+<p><code>a += b</code><br />via<br /><code>tmp = a + b; a = tmp</code></p>
 </div>
 </div>
 </div>
